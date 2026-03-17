@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiraStore Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" href="/static/css/admin.css">
+    <link rel="stylesheet" href="/static/css/tienda.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo" onclick="cargarSeccion('inicio')">SiraStore</a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar modelos..." id="main-search">
+                <button onclick="buscar()">🔍</button>
+            </div>
+
+            <nav>
+                <ul id="nav-list" class="nav-links">
+                    <li><a href="#" onclick="cargarSeccion('inicio')">Inicio</a></li>
+                    <li><a href="#" onclick="cargarSeccion('tienda')">Tienda</a></li>
+                    <li><a href="#" onclick="cargarSeccion('ofertas')">Ofertas</a></li>
+                    <li id="login-link"><a href="#" onclick="cargarSeccion('login')">Entrar</a></li>
+                    <li class="cart-container">
+                        <a href="#" onclick="cargarSeccion('carrito')">
+                            🛒 <span id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="app-content">
+        <h1>Cargando...</h1>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mi Tienda Virtual - Todos los derechos reservados</p>
+    </footer>
+
+
+    <div id="modal-producto" class="modal-fondo" style="display: none;">
+        <div class="modal-caja">
+            <span class="cerrar-modal" onclick="cerrarModalProducto()">✖</span>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <img src="${primeraFoto}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px; border: 1px solid #ddd;" onerror="this.onerror=null; this.src='/static/uploads/sin-foto.png'">
+                
+                <div style="flex: 1; text-align: left;">
+                    <h2 id="modal-titulo" style="margin-top: 0;"></h2>
+                    <p id="modal-marca" style="color: #666; font-size: 0.9rem; margin-bottom: 5px;"></p>
+                    <p id="modal-esp" style="font-size: 0.85rem; background: #f1f1f1; padding: 10px; border-radius: 5px;"></p>
+                    
+                    <h4 style="margin-bottom: 5px;">Selecciona la calidad:</h4>
+                    <div id="modal-opciones-calidad" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
+                        </div>
+                    
+                    <h3 id="modal-precio-final" style="color: #d35400;">S/ 0.00</h3>
+                    
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                        <button onclick="cambiarCantidadModal(-1)" style="padding: 5px 15px; font-weight: bold;">-</button>
+                        <span id="modal-cantidad" style="font-weight: bold; font-size: 1.2rem;">1</span>
+                        <button onclick="cambiarCantidadModal(1)" style="padding: 5px 15px; font-weight: bold;">+</button>
+                    </div>
+
+                    <button id="modal-btn-carrito" onclick="agregarDesdeModal()" style="background: #009ee3; color: white; border: none; padding: 12px 20px; border-radius: 5px; width: 100%; font-weight: bold; cursor: pointer; font-size: 1.1rem;">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="chatbot-container">
+        <button id="chatbot-btn" onclick="toggleChat()">💬 SiraBot</button>
+        <div id="chatbot-window" style="display: none;">
+            <div id="chatbot-header">
+                🤖 Asistente SiraStore
+                <button onclick="toggleChat()" style="background:none; border:none; color:white; font-weight:bold; cursor:pointer; font-size: 1.2rem;">X</button>
+            </div>
+            <div id="chatbot-messages">
+                <div class="bot-msg">¡Hola! Soy SiraBot 👋 ¿Buscas algún repuesto en especial hoy?</div>
+            </div>
+            <div id="chatbot-input-area">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje..." onkeypress="if(event.key === 'Enter') enviarMensajeChat()">
+                <button onclick="enviarMensajeChat()">➤</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='app_nuevo.js') }}"></script>
+    <script src="{{ url_for('static', filename='admin_nuevo.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+Lado del cliente , 
+- que pueda iniciar seccion que mantenga su historial de compras , que acumule una cantidad de puntos por compra y que se cree una targeta de usuario 
+hay 2 tipos de clientes , minoristas y los mayoristas 
+que apresca su nombre enves de entrar y que al picar su nombre salga la funcion de cerrar secion 
+que tenga una paguina donde el cliente pueda ver es estado de su compra : digamos que agrega al carrito , al enviar al whatsap que haga una animacion de cargando y se valla a una paguina de estado de la compra 
+estado de la compra : en este se vera el producto a comprar y al costado donde se pueda ver estado de la compra y un boton de reenviar al whatsap. 
+estados : enviado , en proseso de verificacion , aprovado 
+quien maneja estos estados : 
+-el usurio  empleado
+-funciones da visto bueno a la venta
+que aya un chat con atencion al cliente en el modulo de clientes . al enviar un mensaje el cliente dara una notificacion y el menasaje  al trabajador activo. y que le trabajador pueda contestarle 
+que el trabajdor pueda modificar el precio como descuento   
+
+
+
+Tu visión es espectacular: Perfiles con puntos, tipos de clientes (mayoristas/minoristas), seguimiento de pedidos en tiempo real, roles de empleados, chat en vivo y descuentos dinámicos.
+
+Como programador, te hablo con total sinceridad: esto es un sistema enorme. Si intentamos meter todo ese código de golpe, la página va a explotar y nos llenaremos de errores. Para construir un rascacielos, tenemos que hacer cimientos fuertes.
+
+Vamos a dividir tu "Plan Maestro" en 4 Fases:
+
+Fase 1 (Hoy): Cimientos de Usuarios (Puntos, Mayorista/Minorista, Registro y Menú desplegable con el nombre).
+
+Fase 2: Sistema de Pedidos (Guardar el carrito, animación de carga y página de "Estado de mi compra").
+
+Fase 3: Panel del Empleado (Aprobar compras y dar descuentos).
+
+Fase 4: Chat en Vivo con atención al cliente.
+
+¿Listo para iniciar la Fase 1? ¡Vamos a darle!
+
+
+para mañana : 
+mejoras 
+a las marcas que se pueda crear buscador para todas las marcas 230 marcas
+mejorar el diseño de la ventana flotante crear nuevo producto 
+hacer que el precionar el usurio se cierre automatica mente , y que los puntos se sumen cuando un producto es entregado , seria algo como por cada sol te da un 1 punto . 
+crear una paguna adicional donde se puedan cangear los puntos por descuentos o por productos .
+arregalr de forma estetica y arregal los filtro de la paguina tienda 
+y que en la paguina ofertas solo aparescan ofertas 
+
+otro punto es que todos las categorias y marcas se guarden en un contenedor  
+al escribir al chat , el mensaje del que envia el cliete esta inleguibke esta en un blanco con fondo cleñeste claro 
+
+seria bueno para agregar otro boton en la ventana flotante , debajo de mis pedidos : donde se puedan ver los puntos y por que se pueden canjear.
+mejoara la vista de la paguina en si que se vea mas profecional , vordes redondos pero no tanto , rectangolo circilar 
+hay que buscar a ser mas profecionales , 
+
+para mañana 
+-crear la paguina node se acumulen los puntos por cada sol de compra 
+-

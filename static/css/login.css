@@ -1,0 +1,70 @@
+/* ==========================================
+   FORMULARIOS Y LOGIN
+   ========================================== */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Centra la tarjeta verticalmente */
+    padding: 20px;
+}
+
+.auth-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* Sombra elegante */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-card h2 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 50px; /* Campos de texto redondeados */
+    box-sizing: border-box;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.auth-card input:focus {
+    border-color: var(--secondary); /* Borde dorado al hacer clic */
+}
+
+.auth-card button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-card button:hover {
+    background-color: #151e28;
+}
+
+/* ==========================================
+   TÍTULOS DE PÁGINAS (Tienda, Ofertas)
+   ========================================== */
+.page-header {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    color: var(--primary);
+    font-size: 2rem;
+}

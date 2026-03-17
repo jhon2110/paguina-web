@@ -1,0 +1,388 @@
+/* ==========================================
+   VARIABLES Y BASE
+   ========================================== */
+:root {
+    --primary: #232f3e;
+    --secondary: #febd69;
+    --accent: #e47911;
+    --bg-page: #f0f2f5;
+    --white: #ffffff;
+}
+
+
+/* --- CONTENEDOR MAESTRO --- */
+.main-wrapper, .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+HEADER Y NAV BAR
+========================================== */
+header {
+    background-color: var(--primary);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para móviles */
+    gap: 15px;
+}
+
+.logo {
+    color: var(--secondary);
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* BUSCADOR */
+.search-bar {
+    flex: 1;
+    min-width: 250px;
+    max-width: 600px;
+    display: flex;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+}
+
+.search-bar button {
+    background: var(--secondary);
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* MENÚ */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* CARRITO */
+.cart-container {
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--accent);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+}
+
+/* ==========================================
+   CARRUSEL CORRECTO
+   ========================================== */
+.carousel {
+    max-width: 1200px;
+    width: 95%;
+    height: 400px; /* Fija la altura */
+    margin: 30px auto;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la imagen se deforme */
+}
+
+/* TEXTO ENCIMA DE LA IMAGEN */
+.carousel-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.carousel-caption h2 {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    color: white;
+}
+
+/* BOTONES DEL CARRUSEL */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.carousel-control.prev { left: 20px; }
+.carousel-control.next { right: 20px; }
+
+/* ==========================================
+   MÓVILES (Responsive)
+   ========================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .search-bar {
+        order: 3;
+        width: 100%;
+        margin: 10px 0;
+    }
+    .nav-links {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        overflow-x: auto;
+    }
+    .carousel {
+        height: 250px; /* Carrusel más bajito en celular */
+    }
+    .carousel-caption h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- TRUCO PARA QUE EL FOOTER SIEMPRE ESTÉ ABAJO --- */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa al menos el 100% de la pantalla */
+}
+
+main {
+    flex: 1; /* Esto empuja el footer hacia el final */
+}
+
+/* --- ESTILO DEL FOOTER --- */
+footer {
+    background-color: var(--primary);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* ==========================================
+   MÓVILES (Responsive Corregido)
+   ========================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 15px; /* Espacio uniforme entre logo, buscador y menú */
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    /* Buscador en celular */
+    .search-bar {
+        width: 100%;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    /* Menú en celular */
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap; /* ¡CRUCIAL! Hace que los botones bajen a otra línea si no caben, evitando que se corten */
+        gap: 10px;
+    }
+
+    /* Hacemos los botones un poquito más pequeños para que quepan mejor */
+    .nav-links a {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* Carrusel más pequeño para que no ocupe toda la pantalla del cel */
+    .carousel {
+        height: 200px; 
+    }
+    
+    .carousel-caption {
+        bottom: 10px;
+        left: 10px;
+        padding: 10px;
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ==========================================
+   ESTILOS DEL CHATBOT (SiraBot)
+   ========================================== */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#chatbot-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#chatbot-btn:hover { background-color: #007bb5; transform: scale(1.05); }
+
+#chatbot-window {
+    width: 320px;
+    height: 400px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 15px;
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+}
+
+#chatbot-header {
+    background: var(--secondary);
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chatbot-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f9f9f9;
+}
+
+.bot-msg, .user-msg {
+    max-width: 85%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.bot-msg {
+    background: #e9ecef;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+}
+
+.user-msg {
+    background: var(--primary);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+#chatbot-input-area { display: flex; border-top: 1px solid #ddd; }
+#chatbot-input { flex-grow: 1; border: none; padding: 15px; outline: none; }
+#chatbot-input-area button { background: var(--primary); color: white; border: none; padding: 0 20px; cursor: pointer; font-size: 1.2rem; }
+
+/* ==========================================
+   ESTILOS DE LA VENTANA EMERGENTE (MODAL) Y BOTÓN CHAT
+   ========================================== */
+.bot-btn-ver {
+    background: #ffc107; color: #000; border: none; padding: 8px 15px;
+    border-radius: 20px; font-weight: bold; cursor: pointer;
+    margin-top: 10px; width: 100%; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.bot-btn-ver:hover { background: #ffca2c; transform: scale(1.02); }
+
+.modal-fondo {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); z-index: 2000;
+    display: flex; justify-content: center; align-items: center;
+}
+.modal-caja {
+    background: white; padding: 25px; border-radius: 15px; width: 90%; max-width: 500px;
+    position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center;
+}
+.cerrar-modal {
+    position: absolute; top: 15px; right: 20px; font-size: 1.5rem;
+    cursor: pointer; color: #888;
+}
+.cerrar-modal:hover { color: red; }
+
+.btn-calidad {
+    padding: 8px 12px; border: 2px solid #ddd; border-radius: 5px;
+    background: white; cursor: pointer; font-weight: bold; transition: 0.2s;
+}
+.btn-calidad.seleccionada { border-color: #009ee3; background: #e6f5fb; color: #009ee3; }
